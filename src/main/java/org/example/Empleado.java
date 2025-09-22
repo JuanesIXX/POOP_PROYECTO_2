@@ -1,10 +1,4 @@
-// =====================================================
-// CLASE UTILITARIA DE SEGURIDAD (Crear archivo nuevo)
-// =====================================================
 
-// =====================================================
-// CLASE EMPLEADO CON SEGURIDAD INTEGRADA
-// =====================================================
 package org.example;
 
 import java.time.LocalDate;
@@ -21,7 +15,7 @@ public abstract class Empleado {
     public Empleado(int id, String nombre, String apellido, String cedula,
                     LocalDate fechaContratacion, double salarioBase) {
 
-        // ✅ NUEVAS VALIDACIONES DE SEGURIDAD
+        //   NUEVAS VALIDACIONES DE SEGURIDAD
         if (id <= 0) {
             throw new IllegalArgumentException("ID debe ser positivo");
         }
@@ -44,11 +38,11 @@ public abstract class Empleado {
         setcedula(cedula);
     }
 
-    // Métodos abstractos (sin cambios)
+    // Métodos abstract
     public abstract double calcularSalario();
     public abstract String getTipoEmpleado();
 
-    // ✅ GETTERS SEGUROS
+    //  GETTERS SEGUROS
     public int getId() {
         return id;
     }
@@ -88,7 +82,7 @@ public abstract class Empleado {
         return departamento;
     }
 
-    // ✅ SETTERS CON VALIDACIONES DE SEGURIDAD
+    // SETTERS CO seguridad
     public void setNombre(String nombre) {
         if (nombre == null || nombre.trim().isEmpty()) {
             throw new IllegalArgumentException("Nombre no puede ser nulo o vacío");
