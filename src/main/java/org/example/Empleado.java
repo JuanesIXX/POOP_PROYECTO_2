@@ -15,7 +15,7 @@ public abstract class Empleado {
     public Empleado(int id, String nombre, String apellido, String cedula,
                     LocalDate fechaContratacion, double salarioBase) {
 
-        //   NUEVAS VALIDACIONES DE SEGURIDAD
+        //   VALIDACIONES DE SEGURIDAD
         if (id <= 0) {
             throw new IllegalArgumentException("ID debe ser positivo");
         }
@@ -29,8 +29,8 @@ public abstract class Empleado {
         }
 
         this.id = id;
-        this.nombre = SeguridadUtil.validarInput(nombre);    // ✅ Input sanitizado
-        this.apellido = SeguridadUtil.validarInput(apellido); // ✅ Input sanitizado
+        this.nombre = SeguridadUtil.validarInput(nombre);    //
+        this.apellido = SeguridadUtil.validarInput(apellido); //
         this.fechaContratacion = fechaContratacion;
         this.salarioBase = salarioBase;
 
