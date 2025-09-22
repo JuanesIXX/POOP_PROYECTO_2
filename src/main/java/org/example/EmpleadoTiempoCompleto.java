@@ -12,7 +12,7 @@ public class EmpleadoTiempoCompleto extends Empleado {
         this.beneficios = 0.0;
     }
 
-    // Constructor con beneficios
+    // Constructor beneficios
     public EmpleadoTiempoCompleto(int id, String nombre, String apellido, String cedula,
                                   LocalDate fechaIngreso, double salarioBase, double beneficios) {
         super(id, nombre, apellido, cedula, fechaIngreso, salarioBase);

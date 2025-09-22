@@ -18,5 +18,5 @@ public class EvaluacionDesempeno {
         this.comentarios = comentarios;
     }
 
-    // Getters y setters
+
 }

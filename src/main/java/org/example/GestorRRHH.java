@@ -14,7 +14,7 @@ public class GestorRRHH {
     private int siguienteIdReporte;
     private int siguienteIdEvaluacion; // ✅ NUEVO: Contador para evaluaciones
 
-    // ✅ VARIABLES DE SEGURIDAD
+    //   VARIABLES DE SEGURIDAD
     private String usuarioActual = "SYSTEM";
     private boolean modoSeguro = true;
     private Map<String, Integer> intentosOperacion = new HashMap<>(); // Control de intentos
@@ -27,11 +27,11 @@ public class GestorRRHH {
         this.siguienteIdReporte = 1;
         this.siguienteIdEvaluacion = 1; // ✅ NUEVO: Inicializar contador de evaluaciones
 
-        // ✅ Log inicial
+        //  Log inicial
         registrarOperacion("SYSTEM", "Sistema iniciado", true);
     }
 
-    // ✅ MÉTODOS DE CONTROL DE SEGURIDAD
+    //  MÉTODOS DE CONTROL DE SEGURIDAD
 
     /**
      * Establece el usuario actual para auditoría
@@ -97,7 +97,7 @@ public class GestorRRHH {
         }
     }
 
-    // ✅ MÉTODOS ORIGINALES CON SEGURIDAD AÑADIDA
+    // MÉTODOS ORIGINALES CON SEGURIDAD
 
     /**
      * Agregar departamento con validaciones de seguridad
@@ -133,7 +133,7 @@ public class GestorRRHH {
             throw new IllegalArgumentException("Ya existe un empleado con ID: " + empleado.getId());
         }
 
-        // ✅ Validación adicional de datos sensibles
+        //   Validación adicional de datos sensibles
         try {
             //   validación de integridad  desencriptable
             String cedulaTest = empleado.getcedula();
@@ -243,7 +243,7 @@ public class GestorRRHH {
         registrarOperacion(usuarioActual, "Supervisor " + supervisor.getNombre() + " asignado a " + departamento.getNombre(), true);
     }
 
-    // ✅ MÉTODOS DE CONSULTA CON CONTROL DE ACCESO
+    //   MÉTODOS DE CONSULTA y ACCESO
 
     /**
      * Buscar empleado (con control de acceso)
@@ -291,7 +291,7 @@ public class GestorRRHH {
         return new ArrayList<>(departamentos.values());
     }
 
-    // ✅ MÉTODOS DE REPORTES CON SEGURIDAD
+    //   MÉTODOS DE REPORTES CON SEGURIDAD
 
     public void guardarReporte(ReporteDesempeno reporte) {
         validarAcceso("guardar_reporte");
@@ -332,7 +332,7 @@ public class GestorRRHH {
         return siguienteIdReporte++;
     }
 
-    // ✅ NUEVO: Método para generar IDs de evaluaciones
+    //   NUEVO: Método para generar IDs de evaluaciones
     /**
      * Obtiene el siguiente ID disponible para una evaluación
      * Incluye validaciones de seguridad y auditoría
@@ -346,7 +346,7 @@ public class GestorRRHH {
         return idGenerado;
     }
 
-    // ✅ MÉTODOS DE SEGURIDAD Y AUDITORÍA
+    //  MÉTODOS DE SEGURIDAD Y AUDITORÍA
 
     /**
      * Obtiene el log de auditoría (solo para administradores)
