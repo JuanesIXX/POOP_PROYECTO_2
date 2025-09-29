@@ -97,7 +97,7 @@ public class GestorRRHH {
         }
     }
 
-    // MÉTODOS ORIGINALES CON SEGURIDAD
+    //
 
     /**
      * Agregar departamento con validaciones de seguridad
@@ -193,7 +193,7 @@ public class GestorRRHH {
     }
 
     /**
-     * Asignar empleado a departamento con validaciones
+     * Asignar empleado a departamento
      */
     public void asignarEmpleadoADepartamento(int idEmpleado, int idDepartamento) {
         validarAcceso("asignar_empleado");
@@ -221,7 +221,7 @@ public class GestorRRHH {
     }
 
     /**
-     * Asignar supervisor con validaciones
+     * Asignar supervisor
      */
     public void asignarSupervisor(int idDepartamento, int idSupervisor) {
         validarAcceso("asignar_supervisor");
@@ -243,7 +243,7 @@ public class GestorRRHH {
         registrarOperacion(usuarioActual, "Supervisor " + supervisor.getNombre() + " asignado a " + departamento.getNombre(), true);
     }
 
-    //   MÉTODOS DE CONSULTA y ACCESO
+    //   MÉTODOS DE C
 
     /**
      * Buscar empleado (con control de acceso)
@@ -332,11 +332,7 @@ public class GestorRRHH {
         return siguienteIdReporte++;
     }
 
-    //   NUEVO: Método para generar IDs de evaluaciones
-    /**
-     * Obtiene el siguiente ID disponible para una evaluación
-     * Incluye validaciones de seguridad y auditoría
-     */
+    //   ID EVLAUACION
     public int obtenerSiguienteIdEvaluacion() {
         validarAcceso("crear_evaluacion");
 
@@ -349,7 +345,7 @@ public class GestorRRHH {
     //  MÉTODOS DE SEGURIDAD Y AUDITORÍA
 
     /**
-     * Obtiene el log de auditoría (solo para administradores)
+     * Obtiene el log de auditoría
      */
     public List<String> obtenerLogAuditoria() {
         if (!"admin".equals(usuarioActual.toLowerCase()) && !"system".equals(usuarioActual.toLowerCase())) {
@@ -360,7 +356,7 @@ public class GestorRRHH {
     }
 
     /**
-     * Obtiene estadísticas de seguridad
+     *
      */
     public Map<String, Object> obtenerEstadisticasSeguridad() {
         validarAcceso("ver_estadisticas");
@@ -391,7 +387,7 @@ public class GestorRRHH {
     }
 
     /**
-     * Verifica la integridad de los datos encriptados
+     * Verifica la integridad de l
      */
     public boolean verificarIntegridadDatos() {
         if (!"admin".equals(usuarioActual.toLowerCase())) {
@@ -418,7 +414,7 @@ public class GestorRRHH {
     }
 
     /**
-     * Limpia el log de auditoría (solo admin)
+     * Limpia el log de audit
      */
     public void limpiarLogAuditoria() {
         if (!"admin".equals(usuarioActual.toLowerCase())) {
