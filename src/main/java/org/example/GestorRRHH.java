@@ -54,7 +54,7 @@ public class GestorRRHH {
     }
 
     /**
-     * Verifica si el usuario tiene permisos para la operación
+     * Verifica si el usuario tie1212ne permisos para la operación
      */
     private boolean verificarPermisos(String operacion) {
         if (!modoSeguro) {
