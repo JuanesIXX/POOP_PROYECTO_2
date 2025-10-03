@@ -72,8 +72,11 @@ public class SeguridadUtil {
      *  validar cedula
      */
     public static boolean validarcedula(String cedula) {
-        if (cedula == null) return false;
-        return cedula.matches("\\d{8} ");
+        if (cedula == null) {
+            return false;
+        }
+        //
+        return cedula.matches("\\d{10}");
     }
 
     /**

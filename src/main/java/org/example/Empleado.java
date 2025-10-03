@@ -47,13 +47,19 @@ public abstract class Empleado {
         return id;
     }
 
+    public String getCedula() {
+        return cedulaEncriptado;
+    }
+
     public String getNombre() {
         return nombre;
     }
 
     public String getApellido() {
         return apellido;
+
     }
+
 
     /**
      * ✅
@@ -65,7 +71,7 @@ public abstract class Empleado {
     /**
      * criptado pt2
      */
-    public String getcedulaEnmascarado() {
+    public String getCedulaEnmascarado() {
         String cedula = getcedula();
         return SeguridadUtil.enmascararcedula(cedula);
     }
@@ -135,7 +141,7 @@ public abstract class Empleado {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", cedula='" + getcedulaEnmascarado() + '\'' +  //
+                ", cedula='" + getCedulaEnmascarado() + '\'' +  //
                 ", fechaContratacion=" + fechaContratacion +
                 ", salarioBase=" + salarioBase +
                 ", tipo='" + getTipoEmpleado() + '\'' +
